@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const argv = require('yargs').argv
 const path = require('path')
 const fs   = require('fs')
@@ -26,6 +24,10 @@ for(var dependency in projectPackageJSON.dependencies){
 
 savePackageJSON(projectPackageJSON, projectPath)
 
+/**
+ * @param  {Object} packageJSON
+ * @param  {string} projectPath 
+ */
 function savePackageJSON(packageJson, projectPath) {
 	packageJson = JSON.stringify(packageJson, null, 2)
 
