@@ -1,0 +1,24 @@
+{
+  "name": "pattern-library-updater",
+  "version": "1.0.0",
+  "description": "Node updater for Lerna pattern library versions in to projects",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "yargs": "^10.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelthomps0n/pattern-library-updater.git"
+  },
+  "author": "Samuel Thompson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samuelthomps0n/pattern-library-updater/issues"
+  },
+  "homepage": "https://github.com/samuelthomps0n/pattern-library-updater#readme"
+}
