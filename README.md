@@ -14,3 +14,9 @@ node index.js --project <path to project> --library <path to project> --scope <n
 ## .env
 
 You can also add a `.env` file and put the options in there. Copy the `.env-example` file and add your own values.
+
+```
+PROJECT_PATH=
+LIBRARY_PATH=
+SCOPE=
+```
