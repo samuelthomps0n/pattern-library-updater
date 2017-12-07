@@ -12,16 +12,16 @@ const scope = argv.scope || process.env.SCOPE
 let projectPackageJSON = require(path.join(projectPath, '/package.json'))
 
 for(var dependency in projectPackageJSON.dependencies){
-    if(dependency.startsWith(scope)) {
+	if(dependency.startsWith(scope)) {
 
-    	const packagePath = path.join(libPath, 'packages', dependency.replace(scope + "/", ""), '/package.json')
+		const packagePath = path.join(libPath, 'packages', dependency.replace(scope + "/", ""), '/package.json')
 
-    	if (fs.existsSync(packagePath)) {
-		    const packageJson = require(packagePath)
-		    console.log("Changing version of " + dependency + ": " + projectPackageJSON.dependencies[dependency] + " -> " + packageJson.version)
-	    	projectPackageJSON.dependencies[dependency] = packageJson.version
+		if (fs.existsSync(packagePath)) {
+			const packageJson = require(packagePath)
+			console.log("Changing version of " + dependency + ": " + projectPackageJSON.dependencies[dependency] + " -> " + packageJson.version)
+			projectPackageJSON.dependencies[dependency] = packageJson.version
 		}
-    }
+	}
 }
 
 savePackageJSON(projectPackageJSON, projectPath)
@@ -30,10 +30,10 @@ function savePackageJSON(packageJson, projectPath) {
 	packageJson = JSON.stringify(packageJson, null, 2)
 
 	fs.writeFile(path.join(projectPath, '/package.json'), packageJson, function(err) {
-	    if(err) {
-	        return console.log(err)
-	    }
+		if(err) {
+			return console.log(err)
+		}
 
-	    console.log("The package.json was update")
+		console.log("The package.json was update")
 	})
 }
